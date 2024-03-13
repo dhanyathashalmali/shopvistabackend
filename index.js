@@ -30,6 +30,9 @@ app.use(express.static('public'));
 app.post('/success', (req, res) => {
     const { stripeData, products } = req.body;
 })
+app.get('/', (req, res) => {
+    res.send('Hello from ShopVista backend!');
+});
 mongoose
     .connect(process.env.MONGO_URL)
     .then(() => console.log("DB connection successful"))
